@@ -5,5 +5,9 @@
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public ICollection<Meal> Meals { get; set; } = new List<Meal>();
+
+        public Category() { }
     }
 }
