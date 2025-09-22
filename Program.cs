@@ -1,5 +1,6 @@
 using fakefooddelivery_api.Data;
 using fakefooddelivery_api.Services;
+using fakefooddelivery_api.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -76,6 +77,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FakeFoodDeliveryDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<JwtService>();
 
 var app = builder.Build();

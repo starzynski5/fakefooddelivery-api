@@ -36,7 +36,7 @@ namespace fakefooddelivery_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("fakefooddelivery_api.Models.Meal", b =>
@@ -75,7 +75,7 @@ namespace fakefooddelivery_api.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("Meals");
+                    b.ToTable("Meals", (string)null);
                 });
 
             modelBuilder.Entity("fakefooddelivery_api.Models.Order", b =>
@@ -104,7 +104,7 @@ namespace fakefooddelivery_api.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("fakefooddelivery_api.Models.Restaurant", b =>
@@ -129,7 +129,7 @@ namespace fakefooddelivery_api.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Restaurants");
+                    b.ToTable("Restaurants", (string)null);
                 });
 
             modelBuilder.Entity("fakefooddelivery_api.Models.User", b =>
@@ -161,7 +161,7 @@ namespace fakefooddelivery_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("fakefooddelivery_api.Models.Meal", b =>

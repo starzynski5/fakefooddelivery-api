@@ -4,6 +4,7 @@
     {
         WaitingForTheOrderToBeAccepted,
         InProgress,
-        Delivered
+        Delivered,
+        RejectedTheOrder
     }
 }
