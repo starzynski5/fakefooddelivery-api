@@ -2,6 +2,7 @@
 using fakefooddelivery_api.DTOs;
 using fakefooddelivery_api.Interfaces;
 using fakefooddelivery_api.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace fakefooddelivery_api.Services
@@ -38,6 +39,17 @@ namespace fakefooddelivery_api.Services
             await _context.SaveChangesAsync();
 
             return new RegisterResult { Success = true, Token = _jwtService.GenerateToken(newUser) };
+        }
+
+        public async Task<LoginResult> Login(LoginRequest request)
+        {
+            var user = await _context.Users
+                .Where(u => u.Email == request.Email)
+                .FirstOrDefaultAsync();
+
+            if (user == null || user.Password != request.Password) return new LoginResult { Success = false, ErrorMessage = "Wrong email or password." };
+
+            return new LoginResult { Success = true, Token = _jwtService.GenerateToken(user) };
         }
 
     }
