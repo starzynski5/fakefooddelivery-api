@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "9JgVT0ecvqNWfCsHdYj92a/kg62UhcMfwQJqb9ogq94=",
+  "Source": "fakefooddelivery-api",
+  "BasePath": "_content/fakefooddelivery-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

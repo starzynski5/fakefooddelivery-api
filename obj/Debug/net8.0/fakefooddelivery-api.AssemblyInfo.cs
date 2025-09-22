@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("fakefooddelivery-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9102ad0d37aa88719a2d6ef678e6cb006b7f66ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+470749b02f00ca7d6b4a9976e7ffbce45a41e17e")]
 [assembly: System.Reflection.AssemblyProductAttribute("fakefooddelivery-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("fakefooddelivery-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,8 +7,10 @@
         public ICollection<Meal> Meals { get; set; } = new List<Meal>();
 
         public User Client { get; set; }
+        public int ClientId { get; set; }
 
         public Restaurant Restaurant { get; set; }
+        public int RestaurantId { get; set; }
 
         public Status Status { get; set; }
 
