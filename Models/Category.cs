@@ -1,9 +1,9 @@
 ﻿namespace fakefooddelivery_api.Models
 {
-    public class Order
+    public class Category
     {
         public int Id { get; set; }
 
-
+        public string Name { get; set; }
     }
 }
