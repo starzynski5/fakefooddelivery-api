@@ -1,0 +1,6 @@
+@fakefooddelivery_api_HostAddress = http://localhost:5131
+
+GET {{fakefooddelivery_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
