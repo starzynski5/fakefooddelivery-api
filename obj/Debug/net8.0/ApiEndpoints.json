@@ -82,5 +82,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fakefooddelivery_api.Controllers.RestaurantController",
+    "Method": "CreateMeal",
+    "RelativePath": "api/Restaurant/Meal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "fakefooddelivery_api.DTOs.NewMealRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
