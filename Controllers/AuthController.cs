@@ -23,7 +23,7 @@ namespace fakefooddelivery_api.Controllers
 
             if (result.Success == false)
             {
-                return BadRequest(result.ErrorMessage);
+                return BadRequest(new { result.ErrorMessage });
             }
 
             return Ok(new { result.Token });

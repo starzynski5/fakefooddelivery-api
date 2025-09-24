@@ -78,6 +78,8 @@ builder.Services.AddDbContext<FakeFoodDeliveryDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IMealService, MealService>();
 builder.Services.AddScoped<JwtService>();
 
 var app = builder.Build();

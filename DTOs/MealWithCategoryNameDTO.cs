@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
-
-namespace fakefooddelivery_api.Models
+﻿namespace fakefooddelivery_api.DTOs
 {
-    public class Meal
+    public class MealWithCategoryNameDTO
     {
         public int Id { get; set; }
 
@@ -12,8 +10,8 @@ namespace fakefooddelivery_api.Models
 
         public float Price { get; set; }
 
-        public Category Category { get; set; }
-        
-        public Meal() { }
+        public string CategoryName { get; set; }
+
+        public MealWithCategoryNameDTO() { }
     }
 }

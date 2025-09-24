@@ -1,4 +1,6 @@
-﻿namespace fakefooddelivery_api.Models
+﻿using System.Text.Json.Serialization;
+
+namespace fakefooddelivery_api.Models
 {
     public class Category
     {
