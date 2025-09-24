@@ -12,6 +12,10 @@
 
         public string CategoryName { get; set; }
 
+        public string RestaurantName { get; set; }
+
+        public int RestaurantId { get; set; }
+
         public MealWithCategoryNameDTO() { }
     }
 }

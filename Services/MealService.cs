@@ -24,7 +24,9 @@ namespace fakefooddelivery_api.Services
                     Name = m.Name,
                     Description = m.Description,
                     Price = m.Price,
-                    CategoryName = m.Category.Name
+                    CategoryName = m.Category.Name,
+                    RestaurantName = m.Restaurant.Name,
+                    RestaurantId = m.Restaurant.Id,
                 })
                 .ToListAsync();
 
@@ -41,7 +43,9 @@ namespace fakefooddelivery_api.Services
                     Name = m.Name,
                     Description = m.Description,
                     Price = m.Price,
-                    CategoryName = m.Category.Name
+                    CategoryName = m.Category.Name,
+                    RestaurantName = m.Restaurant.Name,
+                    RestaurantId = m.Restaurant.Id,
                 })
                 .FirstOrDefaultAsync();
 

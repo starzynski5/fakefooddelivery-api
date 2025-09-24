@@ -13,6 +13,8 @@ namespace fakefooddelivery_api.Models
         public float Price { get; set; }
 
         public Category Category { get; set; }
+
+        public Restaurant Restaurant { get; set; }
         
         public Meal() { }
     }
