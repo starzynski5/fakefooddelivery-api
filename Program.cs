@@ -80,6 +80,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectio
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IMealService, MealService>();
+builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<JwtService>();
 
 var app = builder.Build();

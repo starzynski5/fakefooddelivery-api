@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "fakefooddelivery_api.Controllers.AdminController",
+    "Method": "CreateRestaurant",
+    "RelativePath": "api/Admin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "fakefooddelivery_api.DTOs.NewRestaurantRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "fakefooddelivery_api.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
