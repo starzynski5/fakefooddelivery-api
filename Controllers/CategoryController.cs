@@ -1,4 +1,5 @@
-﻿using fakefooddelivery_api.Interfaces;
+﻿using fakefooddelivery_api.DTOs;
+using fakefooddelivery_api.Interfaces;
 using fakefooddelivery_api.Models;
 using fakefooddelivery_api.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +23,16 @@ namespace fakefooddelivery_api.Controllers
             List<Category> categories = await _service.GetAllCategories();
 
             return Ok(categories);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCategoryById(int id)
+        {
+            ServiceResult<Category> result = await _service.GetCategoryById(id);
+
+            if (!result.Success) return BadRequest(result.ErrorMessage);
+
+            return Ok(result.Data);
         }
     }
 }

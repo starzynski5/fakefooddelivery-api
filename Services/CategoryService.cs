@@ -20,5 +20,21 @@ namespace fakefooddelivery_api.Services
 
             return categories;
         }
+
+        public async Task<ServiceResult<Category>> GetCategoryById(int id)
+        {
+            Category category = await _context.Categories
+                .Where(c => c.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (category == null) return ServiceResult<Category>.Fail("Category with this id was not found.");
+
+            Category categoryWithMeals = await _context.Categories
+                .Where(c => c.Id == id)
+                .Include(c => c.Meals)
+                .FirstOrDefaultAsync();
+
+            return ServiceResult<Category>.Ok(category);
+        }
     }
 }
