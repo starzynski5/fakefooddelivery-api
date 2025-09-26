@@ -28,5 +28,15 @@ namespace fakefooddelivery_api.Controllers
 
             return Ok(result.Data);
         }
+
+        [HttpPost("Restaurant/Name")]
+        public async Task<IActionResult> ChangeName([FromBody] RestaurantChangeNameRequest request)
+        {
+            ServiceResult<String> result = await _service.RestaurantChangeName(request);
+
+            if (!result.Success) return BadRequest(result.ErrorMessage);
+
+            return Ok(result.Data);
+        }
     }
 }

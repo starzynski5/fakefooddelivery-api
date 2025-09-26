@@ -114,5 +114,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fakefooddelivery_api.Controllers.RestaurantController",
+    "Method": "ChangeName",
+    "RelativePath": "api/Restaurant/Restaurant/Name",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "fakefooddelivery_api.DTOs.RestaurantChangeNameRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

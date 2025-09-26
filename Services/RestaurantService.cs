@@ -39,5 +39,20 @@ namespace fakefooddelivery_api.Services
 
             return ServiceResult<String>.Ok("Meal created.");
         }
+
+        public async Task<ServiceResult<String>> RestaurantChangeName(RestaurantChangeNameRequest request)
+        {
+            Restaurant restaurant = await _context.Restaurants
+                .Where(r => r.Id == request.RestaurantId)
+                .FirstOrDefaultAsync();
+
+            if (restaurant == null) return ServiceResult<String>.Fail("Failed. Please try again.");
+
+            restaurant.Name = request.NewName;
+
+            await _context.SaveChangesAsync();
+
+            return ServiceResult<String>.Ok("Restaurant's name has been changed.");
+        }
     }
 }
