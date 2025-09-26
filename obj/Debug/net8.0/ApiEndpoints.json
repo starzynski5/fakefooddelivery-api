@@ -133,6 +133,22 @@
   },
   {
     "ContainingType": "fakefooddelivery_api.Controllers.RestaurantController",
+    "Method": "DeleteMeal",
+    "RelativePath": "api/Restaurant/Meal/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fakefooddelivery_api.Controllers.RestaurantController",
     "Method": "ChangeName",
     "RelativePath": "api/Restaurant/Restaurant/Name",
     "HttpMethod": "POST",

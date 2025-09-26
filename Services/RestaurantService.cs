@@ -74,5 +74,20 @@ namespace fakefooddelivery_api.Services
 
             return ServiceResult<String>.Ok("Meal data updated.");
         }
+
+        public async Task<ServiceResult<String>> DeleteMeal(int id)
+        {
+            Meal meal = await _context.Meals
+                .Where(m => m.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (meal == null) return ServiceResult<String>.Fail("Meal with this id was not found.");
+
+            _context.Meals.Remove(meal);
+
+            await _context.SaveChangesAsync();
+
+            return ServiceResult<String>.Ok("Meal removed.");
+        }
     }
 }

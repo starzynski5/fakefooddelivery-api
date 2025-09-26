@@ -48,5 +48,15 @@ namespace fakefooddelivery_api.Controllers
 
             return Ok(result.Data);
         }
+
+        [HttpDelete("Meal/{id}")]
+        public async Task<IActionResult> DeleteMeal(int id)
+        {
+            ServiceResult<String> result = await _service.DeleteMeal(id);
+
+            if (!result.Success) return BadRequest(result.ErrorMessage);
+
+            return Ok(result.Data);
+        }
     }
 }
