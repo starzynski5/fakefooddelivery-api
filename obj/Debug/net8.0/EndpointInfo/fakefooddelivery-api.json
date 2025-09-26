@@ -197,6 +197,35 @@
             "description": "OK"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Restaurant"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditMealRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditMealRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditMealRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/Restaurant/Restaurant/Name": {
@@ -233,6 +262,28 @@
   },
   "components": {
     "schemas": {
+      "EditMealRequest": {
+        "type": "object",
+        "properties": {
+          "mealId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "newName": {
+            "type": "string",
+            "nullable": true
+          },
+          "newDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "newPrice": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "additionalProperties": false
+      },
       "LoginRequest": {
         "type": "object",
         "properties": {

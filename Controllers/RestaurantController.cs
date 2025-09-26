@@ -38,5 +38,15 @@ namespace fakefooddelivery_api.Controllers
 
             return Ok(result.Data);
         }
+
+        [HttpPut("Meal")]
+        public async Task<IActionResult> EditMeal([FromBody] EditMealRequest request)
+        {
+            ServiceResult<String> result = await _service.EditMeal(request);
+
+            if (!result.Success) return BadRequest(result.ErrorMessage);
+
+            return Ok(result.Data);
+        }
     }
 }

@@ -54,5 +54,25 @@ namespace fakefooddelivery_api.Services
 
             return ServiceResult<String>.Ok("Restaurant's name has been changed.");
         }
+
+        public async Task<ServiceResult<String>> EditMeal(EditMealRequest request)
+        {
+            Meal meal = await _context.Meals
+                .Where(m => m.Id == request.MealId)
+                .FirstOrDefaultAsync();
+
+            if (meal == null) return ServiceResult<String>.Fail("Meal with this id was not found.");
+
+            meal.Id = meal.Id;
+            meal.Name = request.NewName;
+            meal.Description = request.NewDescription;
+            meal.Price = request.NewPrice;
+            meal.Category = meal.Category;
+            meal.Restaurant = meal.Restaurant;
+
+            await _context.SaveChangesAsync();
+
+            return ServiceResult<String>.Ok("Meal data updated.");
+        }
     }
 }

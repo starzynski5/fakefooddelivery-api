@@ -7,5 +7,7 @@ namespace fakefooddelivery_api.Interfaces
         public Task<ServiceResult<String>> CreateMeal(NewMealRequest request);
 
         public Task<ServiceResult<String>> RestaurantChangeName(RestaurantChangeNameRequest request);
+
+        public Task<ServiceResult<String>> EditMeal(EditMealRequest request);
     }
 }
