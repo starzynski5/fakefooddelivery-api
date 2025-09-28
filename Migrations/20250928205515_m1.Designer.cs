@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using fakefooddelivery_api.Data;
 
@@ -11,9 +12,11 @@ using fakefooddelivery_api.Data;
 namespace fakefooddelivery_api.Migrations
 {
     [DbContext(typeof(FakeFoodDeliveryDbContext))]
-    partial class FakeFoodDeliveryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250928205515_m1")]
+    partial class m1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
