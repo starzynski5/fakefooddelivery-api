@@ -5,5 +5,7 @@ namespace fakefooddelivery_api.Interfaces
     public interface IAdminService
     {
         Task<ServiceResult<String>> CreateRestaurant(NewRestaurantRequest request);
+
+        Task<ServiceResult<String>> CreateCategory(NewCategoryRequest request);
     }
 }

@@ -17,7 +17,7 @@ namespace fakefooddelivery_api.Controllers
             _service = service;
         }
 
-        [HttpPost]
+        [HttpPost("Restaurant/New")]
         public async Task<IActionResult> CreateRestaurant([FromBody] NewRestaurantRequest request)
         {
             ServiceResult<String> newRestaurantResult = await _service.CreateRestaurant(request);
@@ -28,6 +28,19 @@ namespace fakefooddelivery_api.Controllers
             }
 
             return Ok(newRestaurantResult.Data);
+        }
+
+        [HttpPost("Category/New")]
+        public async Task<IActionResult> CreateCategory([FromBody] NewCategoryRequest request)
+        {
+            ServiceResult<String> newCategoryResult = await _service.CreateCategory(request);
+
+            if (!newCategoryResult.Success)
+            {
+                return BadRequest(newCategoryResult.ErrorMessage);
+            }
+
+            return Ok(newCategoryResult.Data);
         }
     }
 }

@@ -82,6 +82,7 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IMealService, MealService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IRestaurantService, RestaurantService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<JwtService>();
 
 var app = builder.Build();

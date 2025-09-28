@@ -5,7 +5,7 @@
     "version": "v1"
   },
   "paths": {
-    "/api/Admin": {
+    "/api/Admin/Restaurant/New": {
       "post": {
         "tags": [
           "Admin"
@@ -25,6 +25,37 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/NewRestaurantRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/Category/New": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCategoryRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCategoryRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCategoryRequest"
               }
             }
           }
@@ -315,6 +346,16 @@
             "nullable": true
           },
           "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NewCategoryRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
             "type": "string",
             "nullable": true
           }

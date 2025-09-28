@@ -1,8 +1,24 @@
 [
   {
     "ContainingType": "fakefooddelivery_api.Controllers.AdminController",
+    "Method": "CreateCategory",
+    "RelativePath": "api/Admin/Category/New",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "fakefooddelivery_api.DTOs.NewCategoryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fakefooddelivery_api.Controllers.AdminController",
     "Method": "CreateRestaurant",
-    "RelativePath": "api/Admin",
+    "RelativePath": "api/Admin/Restaurant/New",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

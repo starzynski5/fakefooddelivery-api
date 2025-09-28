@@ -33,5 +33,22 @@ namespace fakefooddelivery_api.Services
 
             return ServiceResult<String>.Ok("Restaurant created.");
         }
+
+        public async Task<ServiceResult<String>> CreateCategory(NewCategoryRequest request)
+        {
+            Category category = await _context.Categories
+                .Where(c => c.Name == request.Name)
+                .FirstOrDefaultAsync();
+
+            if (category != null) return ServiceResult<String>.Fail("This category already exists.");
+
+            Category newCategory = new Category();
+            newCategory.Name = request.Name;
+
+            _context.Categories.Add(newCategory);
+            await _context.SaveChangesAsync();
+
+            return ServiceResult<String>.Ok("Category created.");
+        }
     }
 }

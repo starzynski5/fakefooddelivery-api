@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
 
-        public ICollection<Meal> Meals { get; set; } = new List<Meal>();
+        public Meal Meal { get; set; }
 
         public User Client { get; set; }
         public int ClientId { get; set; }
@@ -18,6 +18,7 @@
 
         public Order() { 
             CreatedAtDate = DateTime.UtcNow;
+            Status = Status.WaitingForTheOrderToBeAccepted;
         }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using fakefooddelivery_api.Data;
 
@@ -11,9 +12,11 @@ using fakefooddelivery_api.Data;
 namespace fakefooddelivery_api.Migrations
 {
     [DbContext(typeof(FakeFoodDeliveryDbContext))]
-    partial class FakeFoodDeliveryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250928103451_x")]
+    partial class x
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +39,7 @@ namespace fakefooddelivery_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("fakefooddelivery_api.Models.Meal", b =>
@@ -70,7 +73,7 @@ namespace fakefooddelivery_api.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("Meals", (string)null);
+                    b.ToTable("Meals");
                 });
 
             modelBuilder.Entity("fakefooddelivery_api.Models.Order", b =>
@@ -104,7 +107,7 @@ namespace fakefooddelivery_api.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("fakefooddelivery_api.Models.Restaurant", b =>
@@ -129,7 +132,7 @@ namespace fakefooddelivery_api.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Restaurants", (string)null);
+                    b.ToTable("Restaurants");
                 });
 
             modelBuilder.Entity("fakefooddelivery_api.Models.User", b =>
@@ -161,7 +164,7 @@ namespace fakefooddelivery_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("fakefooddelivery_api.Models.Meal", b =>
