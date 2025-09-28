@@ -58,5 +58,45 @@ namespace fakefooddelivery_api.Controllers
 
             return Ok(result.Data);
         }
+
+        [HttpGet("Orders")]
+        public async Task<IActionResult> GetAllOrders(int restaurantId)
+        {
+            ServiceResult<List<Order>> result = await _service.GetAllOrders(restaurantId);
+
+            if (!result.Success) return BadRequest(result.ErrorMessage);
+
+            return Ok(result.Data);
+        }
+
+        [HttpGet("Order/Accept/{id}")]
+        public async Task<IActionResult> AcceptOrder(int id)
+        {
+            ServiceResult<String> result = await _service.AcceptOrder(id);
+
+            if (!result.Success) return BadRequest(result.ErrorMessage);
+
+            return Ok(result.Data);
+        }
+
+        [HttpGet("Order/Reject/{id}")]
+        public async Task<IActionResult> RejectOrder(int id)
+        {
+            ServiceResult<String> result = await _service.RejectOrder(id);
+
+            if (!result.Success) return BadRequest(result.ErrorMessage);
+
+            return Ok(result.Data);
+        }
+
+        [HttpGet("Order/Delivered/{id}")]
+        public async Task<IActionResult> DeliveredOrder(int id)
+        {
+            ServiceResult<String> result = await _service.DeliveredOrder(id);
+
+            if (!result.Success) return BadRequest(result.ErrorMessage);
+
+            return Ok(result.Data);
+        }
     }
 }

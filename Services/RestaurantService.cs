@@ -89,5 +89,59 @@ namespace fakefooddelivery_api.Services
 
             return ServiceResult<String>.Ok("Meal removed.");
         }
+
+        public async Task<ServiceResult<List<Order>>> GetAllOrders(int restaurantId)
+        {
+            List<Order> orders = await _context.Orders
+                .Where(o => o.RestaurantId == restaurantId)
+                .ToListAsync();
+
+            return ServiceResult<List<Order>>.Ok(orders);
+        }
+
+        public async Task<ServiceResult<String>> AcceptOrder(int id)
+        {
+            Order order = await _context.Orders
+                .Where(o => o.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (order == null) return ServiceResult<String>.Fail("Failed. Please try again.");
+
+            order.Status = Status.InProgress;
+
+            await _context.SaveChangesAsync();
+
+            return ServiceResult<String>.Ok("Order accepted");
+        }
+
+        public async Task<ServiceResult<String>> RejectOrder(int id)
+        {
+            Order order = await _context.Orders
+                .Where(o => o.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (order == null) return ServiceResult<String>.Fail("Failed. Please try again.");
+
+            order.Status = Status.RejectedTheOrder;
+
+            await _context.SaveChangesAsync();
+
+            return ServiceResult<String>.Ok("Order rejected.");
+        }
+
+        public async Task<ServiceResult<String>> DeliveredOrder(int id)
+        {
+            Order order = await _context.Orders
+                .Where(o => o.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (order == null) return ServiceResult<String>.Fail("Failed. Please try again.");
+
+            order.Status = Status.Delivered;
+
+            await _context.SaveChangesAsync();
+
+            return ServiceResult<String>.Ok("Order delivered.");
+        }
     }
 }
