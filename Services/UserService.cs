@@ -46,5 +46,16 @@ namespace fakefooddelivery_api.Services
 
             return ServiceResult<Order>.Ok(order);
         }
+
+        public async Task<ServiceResult<Order>> GetOrderById(int id)
+        {
+            Order order = await _context.Orders
+                .Where(o => o.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (order == null) return ServiceResult<Order>.Fail("Failed. Please try again.");
+
+            return ServiceResult<Order>.Ok(order);
+        }
     }
 }

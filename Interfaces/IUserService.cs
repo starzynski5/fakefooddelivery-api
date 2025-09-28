@@ -6,5 +6,7 @@ namespace fakefooddelivery_api.Interfaces
     public interface IUserService
     {
         Task<ServiceResult<Order>> CreateOrder(int userId, NewOrderRequest request);
+
+        Task<ServiceResult<Order>> GetOrderById(int id);
     }
 }

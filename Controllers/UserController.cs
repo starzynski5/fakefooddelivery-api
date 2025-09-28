@@ -30,7 +30,19 @@ namespace fakefooddelivery_api.Controllers
 
             if (!result.Success) return BadRequest(result.ErrorMessage);
 
-            return Ok(result);
+            return Ok(result.Data);
+        }
+
+        [HttpGet("Order/{id}")]
+        public async Task<IActionResult> GetOrderById(int id)
+        {
+            if (id == 0) return BadRequest();
+
+            ServiceResult<Order> result = await _service.GetOrderById(id);
+
+            if (!result.Success) return BadRequest(result.ErrorMessage);
+
+            return Ok(result.Data);
         }
     }
 }
