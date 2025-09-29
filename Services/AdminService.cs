@@ -50,5 +50,33 @@ namespace fakefooddelivery_api.Services
 
             return ServiceResult<String>.Ok("Category created.");
         }
+
+        public async Task<ServiceResult<List<Order>>> GetAllOrders()
+        {
+            List<Order> orders = await _context.Orders
+                .ToListAsync();
+
+            return ServiceResult<List<Order>>.Ok(orders);
+        }
+
+        public async Task<ServiceResult<List<Order>>> GetOrdersOfRestaurant(int restaurantId)
+        {
+            List<Order> orders = await _context.Orders
+                .Where(o => o.RestaurantId == restaurantId)
+                .ToListAsync();
+
+            return ServiceResult<List<Order>>.Ok(orders);
+        }
+
+        public async Task<ServiceResult<Order>> GetOrderById(int id)
+        {
+            Order order = await _context.Orders
+                .Where(o => o.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (order == null) return ServiceResult<Order>.Fail("Order not found.");
+
+            return ServiceResult<Order>.Ok(order);
+        }
     }
 }

@@ -17,6 +17,32 @@
   },
   {
     "ContainingType": "fakefooddelivery_api.Controllers.AdminController",
+    "Method": "GetAllOrders",
+    "RelativePath": "api/Admin/Orders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fakefooddelivery_api.Controllers.AdminController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/Admin/Orders/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fakefooddelivery_api.Controllers.AdminController",
     "Method": "CreateRestaurant",
     "RelativePath": "api/Admin/Restaurant/New",
     "HttpMethod": "POST",
@@ -26,6 +52,22 @@
       {
         "Name": "request",
         "Type": "fakefooddelivery_api.DTOs.NewRestaurantRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fakefooddelivery_api.Controllers.AdminController",
+    "Method": "GetOrdersOfRestaurant",
+    "RelativePath": "api/Admin/Restaurant/Orders/{restaurantId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "restaurantId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -238,6 +280,22 @@
       {
         "Name": "request",
         "Type": "fakefooddelivery_api.DTOs.RestaurantChangeNameRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fakefooddelivery_api.Controllers.UserController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/User/Order/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

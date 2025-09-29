@@ -1,5 +1,6 @@
 ﻿using fakefooddelivery_api.DTOs;
 using fakefooddelivery_api.Interfaces;
+using fakefooddelivery_api.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,6 +42,32 @@ namespace fakefooddelivery_api.Controllers
             }
 
             return Ok(newCategoryResult.Data);
+        }
+
+        [HttpGet("Orders")]
+        public async Task<IActionResult> GetAllOrders()
+        {
+            ServiceResult<List<Order>> result = await _service.GetAllOrders();
+
+            return Ok(result.Data);
+        }
+
+        [HttpGet("Restaurant/Orders/{restaurantId}")]
+        public async Task<IActionResult> GetOrdersOfRestaurant(int restaurantId)
+        {
+            ServiceResult<List<Order>> result = await _service.GetOrdersOfRestaurant(restaurantId);
+
+            return Ok(result.Data);
+        }
+
+        [HttpGet("Orders/{id}")]
+        public async Task<IActionResult> GetOrderById(int id)
+        {
+            ServiceResult<Order> result = await _service.GetOrderById(id);
+
+            if (!result.Success) return NotFound(result.ErrorMessage);
+
+            return Ok(result.Data);
         }
     }
 }
