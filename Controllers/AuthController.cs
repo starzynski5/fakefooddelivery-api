@@ -16,7 +16,7 @@ namespace fakefooddelivery_api.Controllers
             _authService = authService;
         }
 
-        [HttpPost("register")]
+        [HttpPost("Register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
             RegisterResult result = await _authService.Register(request);
@@ -29,7 +29,7 @@ namespace fakefooddelivery_api.Controllers
             return Ok(new { result.Token });
         }
 
-        [HttpPost("login")]
+        [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             LoginResult result = await _authService.Login(request);
